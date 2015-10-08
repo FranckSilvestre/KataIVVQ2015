@@ -21,8 +21,6 @@ class User {
     static constraints = {
         email email: true
         password minSize: 5, validator: { val, obj ->
-            def str = obj.passwordConfirm
-            log.error(str)
             return val == obj.passwordConfirm
         }
         username blank: false
