@@ -32,11 +32,20 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${userInstance?.password}">
+				<g:if test="${userInstance?.passwordFirstTry}">
 				<li class="fieldcontain">
-					<span id="password-label" class="property-label"><g:message code="user.password.label" default="Password" /></span>
+					<span id="passwordFirstTry-label" class="property-label"><g:message code="user.passwordFirstTry.label" default="Password First Try" /></span>
 					
-						<span class="property-value" aria-labelledby="password-label"><g:fieldValue bean="${userInstance}" field="password"/></span>
+						<span class="property-value" aria-labelledby="passwordFirstTry-label"><g:fieldValue bean="${userInstance}" field="passwordFirstTry"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${userInstance?.passwordConfirm}">
+				<li class="fieldcontain">
+					<span id="passwordConfirm-label" class="property-label"><g:message code="user.passwordConfirm.label" default="Password Confirm" /></span>
+					
+						<span class="property-value" aria-labelledby="passwordConfirm-label"><g:fieldValue bean="${userInstance}" field="passwordConfirm"/></span>
 					
 				</li>
 				</g:if>
@@ -50,11 +59,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${userInstance?.passwordConfirm}">
+				<g:if test="${userInstance?.password}">
 				<li class="fieldcontain">
-					<span id="passwordConfirm-label" class="property-label"><g:message code="user.passwordConfirm.label" default="Password Confirm" /></span>
+					<span id="password-label" class="property-label"><g:message code="user.password.label" default="Password" /></span>
 					
-						<span class="property-value" aria-labelledby="passwordConfirm-label"><g:fieldValue bean="${userInstance}" field="passwordConfirm"/></span>
+						<span class="property-value" aria-labelledby="password-label"><g:fieldValue bean="${userInstance}" field="password"/></span>
 					
 				</li>
 				</g:if>

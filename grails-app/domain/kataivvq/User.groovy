@@ -7,8 +7,9 @@ class User {
     String password
 
     String passwordConfirm
+    String passwordFirstTry
 
-    static transients = ['passwordConfirm']
+    static transients = ['passwordConfirm','passwordFirstTry']
 
     boolean isMemberOfProject(Project project){
         ProjectMember.findByMemberAndProject(this,project) != null
@@ -20,10 +21,11 @@ class User {
 
     static constraints = {
         email email: true
-        password minSize: 5, validator: { val, obj ->
+        passwordFirstTry minSize: 5, validator: { val, obj ->
             return val == obj.passwordConfirm
         }
         passwordConfirm bindable:true
+        passwordFirstTry bindable:true
         username blank: false
     }
 }

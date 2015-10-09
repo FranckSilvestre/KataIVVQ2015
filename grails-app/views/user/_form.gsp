@@ -11,12 +11,21 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'password', 'error')} required">
-	<label for="password">
-		<g:message code="user.password.label" default="Password" />
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'passwordFirstTry', 'error')} required">
+	<label for="passwordFirstTry">
+		<g:message code="user.passwordFirstTry.label" default="Password First Try" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="password" required="" value="${userInstance?.password}"/>
+	<g:textField name="passwordFirstTry" required="" value="${userInstance?.passwordFirstTry}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'passwordConfirm', 'error')} required">
+	<label for="passwordConfirm">
+		<g:message code="user.passwordConfirm.label" default="Password Confirm" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="passwordConfirm" required="" value="${userInstance?.passwordConfirm}"/>
 
 </div>
 
@@ -29,12 +38,12 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'passwordConfirm', 'error')} required">
-	<label for="passwordConfirm">
-		<g:message code="user.passwordConfirm.label" default="Password Confirm" />
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'password', 'error')} required">
+	<label for="password">
+		<g:message code="user.password.label" default="Password" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="passwordConfirm" required="" value="${userInstance?.passwordConfirm}"/>
+	<g:textField name="password" required="" value="${userInstance?.password}"/>
 
 </div>
 
