@@ -26,7 +26,6 @@ class UserController {
     @Transactional
     def save() {
         User userInstance = new User(params)
-        userInstance.passwordConfirm = params.passwordConfirm
         if (userInstance == null) {
             notFound()
             return
@@ -56,7 +55,6 @@ class UserController {
     def update() {
         User userInstance = User.get(params.id)
         userInstance.properties = params
-        userInstance.passwordConfirm = params.passwordConfirm
         if (userInstance == null) {
             notFound()
             return

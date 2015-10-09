@@ -23,6 +23,7 @@ class User {
         password minSize: 5, validator: { val, obj ->
             return val == obj.passwordConfirm
         }
+        passwordConfirm bindable:true
         username blank: false
     }
 }
